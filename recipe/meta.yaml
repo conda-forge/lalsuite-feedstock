@@ -1,23 +1,23 @@
 {% set name = "lalsuite" %}
-{% set version = "6.52" %}
+{% set version = "6.53" %}
 
 # sub-package versions
-{% set lal_version = "6.19.1" %}
+{% set lal_version = "6.19.2" %}
 {% set lalframe_version = "1.4.0" %}
-{% set lalmetaio_version = "1.4.0" %}
-{% set lalsimulation_version = "1.8.1" %}
-{% set lalburst_version = "1.5.0" %}
-{% set lalinspiral_version = "1.8.0" %}
-{% set lalpulsar_version = "1.17.0" %}
-{% set lalinference_version = "1.10.1" %}
-{% set lalapps_version = "6.22.0" %}
+{% set lalmetaio_version = "1.5.0" %}
+{% set lalsimulation_version = "1.8.2" %}
+{% set lalburst_version = "1.5.1" %}
+{% set lalinspiral_version = "1.8.1" %}
+{% set lalpulsar_version = "1.17.1" %}
+{% set lalinference_version = "1.10.2" %}
+{% set lalapps_version = "6.23.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -26,22 +26,22 @@ requirements:
   run:
     - python
     - lal >={{ lal_version }}
-    - python-lal >={{ lal_version }}
     - lalframe >={{ lalframe_version }}
-    - python-lalframe >={{ lalframe_version }}
     - lalmetaio >={{ lalmetaio_version }}
-    - python-lalmetaio >={{ lalmetaio_version }}
     - lalsimulation >={{ lalsimulation_version }}
-    - python-lalsimulation >={{ lalsimulation_version }}
     - lalburst >={{ lalburst_version }}
-    - python-lalburst >={{ lalburst_version }}
     - lalinspiral >={{ lalinspiral_version }}
-    - python-lalinspiral >={{ lalinspiral_version }}
     - lalpulsar >={{ lalpulsar_version }}
-    - python-lalpulsar >={{ lalpulsar_version }}
     - lalinference >={{ lalinference_version }}
-    - python-lalinference >={{ lalinference_version }}
     - lalapps >={{ lalapps_version }}
+    - python-lal >={{ lal_version }}
+    - python-lalframe >={{ lalframe_version }}
+    - python-lalmetaio >={{ lalmetaio_version }}
+    - python-lalsimulation >={{ lalsimulation_version }}
+    - python-lalburst >={{ lalburst_version }}
+    - python-lalinspiral >={{ lalinspiral_version }}
+    - python-lalpulsar >={{ lalpulsar_version }}
+    - python-lalinference >={{ lalinference_version }}
 
 test:
   imports:
