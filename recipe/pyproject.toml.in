@@ -1,0 +1,19 @@
+[build-system]
+requires = ["poetry"]
+
+[tool.poetry]
+name = "{{ meta['package']['name'] }}"
+version = "{{ meta['package']['version'] }}"
+description = "{{ meta['about']['summary'] }}"
+authors = ["LIGO Scientific Collaboration <lal-discuss@ligo.org>"]
+maintainers = ["Adam Mercer <adam.mercer@ligo.org>"]
+homepage = "{{ meta['about']['home'] }}"
+license = "{{ meta['about']['license'] }}"
+repository = "{{ meta['about']['dev_url'] }}"
+documentation = "{{ meta['about']['doc_url'] }}"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics"
+]
