@@ -17,12 +17,17 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  noarch: python
 
 requirements:
   host:
+    - jinja2
+    - lockfile
+    - pip
+    - poetry
     - python
+    - pyyaml
   run:
     - python
     - lal >={{ lal_version }}
@@ -58,18 +63,15 @@ test:
     - pip
   commands:
     - lalapps_version
-    # check that the pip recognises that package is already installed
-    # mainly by asking pip to install it again, and making sure it doesn't
-    # do anything
-    - python -m pip install --no-deps --index-url nothing {{ name }}
+    - python -m pip show {{ name }}
 
 about:
-  home: https://wiki.ligo.org/Computing/DASWG/LALSuite
+  home: https://wiki.ligo.org/Computing/LALSuite
   doc_url: https://lscsoft.docs.ligo.org/lalsuite/
   dev_url: https://git.ligo.org/lscsoft/lalsuite/
-  license: GPLv3
+  license: GPL-3.0-or-later
   license_family: GPL
-  license_file: '{{ environ["RECIPE_DIR"] }}/COPYING'
+  license_file: COPYING
   summary: LSC Algorithm Library Suite
   description: |
     The LSC Algorithm Library Applications for gravitational wave data
