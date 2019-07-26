@@ -16,7 +16,7 @@ def parse_meta_yaml(filename):
     """
     with open(filename, "r") as fobj:
         raw = fobj.read()
-    return yaml.load(jinja2.Template(raw).render(), Loader=yaml.Loader)
+    return yaml.load(jinja2.Template(raw).render(), Loader=yaml.BaseLoader)
 
 
 # parse the meta.yaml file, and get the basic info
@@ -25,4 +25,4 @@ meta = parse_meta_yaml(join(RECIPE_DIR, "meta.yaml"))
 # write a formatted pyproject.toml file for poetry to use
 with open(join(RECIPE_DIR, "pyproject.toml.in"), "r") as fobj:
     with open("pyproject.toml", "w") as fout:
-        fout.write(jinja2.Template(fobj.read()).render(meta=meta))
+        print(jinja2.Template(fobj.read()).render(meta=meta), file=fout)
