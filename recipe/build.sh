@@ -3,6 +3,12 @@
 # render the pyproject.toml file
 ${PYTHON} ${RECIPE_DIR}/render.py
 
+# print rendered pyproject.toml file
+echo "Rendered pyproject.toml file:"
+echo "===================="
+cat pyproject.toml
+echo "===================="
+
 # create a wheel using poetry
 mkdir -p ${PKG_NAME}
 ${PYTHON} -m poetry config settings.virtualenvs.path $(pwd)
