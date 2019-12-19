@@ -1,5 +1,5 @@
 {% set name = "lalsuite" %}
-{% set version = "6.63" %}
+{% set version = "6.64" %}
 
 # sub-package versions
 {% set lal_version = "6.21.0" %}
@@ -9,7 +9,7 @@
 {% set lalburst_version = "1.5.3" %}
 {% set lalinspiral_version = "1.10.0" %}
 {% set lalpulsar_version = "1.18.2" %}
-{% set lalinference_version = "1.11.4" %}
+{% set lalinference_version = "1.11.5" %}
 {% set lalapps_version = "6.25.0" %}
 
 package:
