@@ -25,7 +25,7 @@ requirements:
     - jinja2
     - lockfile
     - pip
-    - poetry
+    - poetry >=1
     - python >=3
     - pyyaml
   run:

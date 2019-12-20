@@ -11,7 +11,6 @@ echo "===================="
 
 # create a wheel using poetry
 mkdir -p ${PKG_NAME}
-${PYTHON} -m poetry config settings.virtualenvs.path $(pwd)
 ${PYTHON} -m poetry build --no-interaction --format wheel -vvv
 
 # install the new wheel using pip
