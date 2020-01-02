@@ -1,12 +1,12 @@
 {% set name = "lalsuite" %}
-{% set version = "6.64" %}
+{% set version = "6.65" %}
 
 # sub-package versions
 {% set lal_version = "6.21.0" %}
 {% set lalframe_version = "1.5.0" %}
 {% set lalmetaio_version = "1.6.0" %}
 {% set lalsimulation_version = "1.10.0" %}
-{% set lalburst_version = "1.5.3" %}
+{% set lalburst_version = "1.5.4" %}
 {% set lalinspiral_version = "1.10.0" %}
 {% set lalpulsar_version = "1.18.2" %}
 {% set lalinference_version = "1.11.5" %}
