@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# copy over the pyproject.toml
+cp -v ${RECIPE_DIR}/pyproject.toml .
+
+echo "pyproject.toml file:"
+echo "===================="
+cat pyproject.toml
+echo "===================="
+
 # render the setup.cfg file
 ${PYTHON} ${RECIPE_DIR}/render.py
 
