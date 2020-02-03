@@ -18,15 +18,14 @@ package:
 
 build:
   noarch: "python"
-  number: 0
+  number: 1
 
 requirements:
   host:
     - jinja2
-    - lockfile
     - pip
-    - poetry 1.0.0
     - python >=3
+    - setuptools >=38.3.0
     - pyyaml
   run:
     - python
