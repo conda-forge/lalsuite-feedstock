@@ -1,17 +1,21 @@
 #!/bin/bash
 
-# render the pyproject.toml file
-${PYTHON} ${RECIPE_DIR}/render.py
+# copy over the pyproject.toml
+cp -v ${RECIPE_DIR}/pyproject.toml .
 
-# print rendered pyproject.toml file
-echo "Rendered pyproject.toml file:"
+echo "pyproject.toml file:"
 echo "===================="
 cat pyproject.toml
 echo "===================="
 
-# create a wheel using poetry
-mkdir -p ${PKG_NAME}
-${PYTHON} -m poetry build --no-interaction --format wheel -vvv
+# render the setup.cfg file
+${PYTHON} ${RECIPE_DIR}/render.py
 
-# install the new wheel using pip
-${PYTHON} -m pip install dist/${PKG_NAME}-${PKG_VERSION}-*.whl -vvv
+# print rendered setup.cfg file
+echo "Rendered setup.cfg file:"
+echo "===================="
+cat setup.cfg
+echo "===================="
+
+# install the new package
+${PYTHON} -m pip install .
