@@ -1,5 +1,5 @@
 {% set name = "lalsuite" %}
-{% set version = "6.67" %}
+{% set version = "6.69" %}
 
 # sub-package versions
 {% set lal_version = "6.21.0" %}
@@ -9,7 +9,7 @@
 {% set lalburst_version = "1.5.4" %}
 {% set lalinspiral_version = "1.10.0" %}
 {% set lalpulsar_version = "1.18.2" %}
-{% set lalinference_version = "1.11.5" %}
+{% set lalinference_version = "1.11.7" %}
 {% set lalapps_version = "6.25.1" %}
 
 package:
@@ -18,7 +18,7 @@ package:
 
 build:
   noarch: "python"
-  number: 1
+  number: 0
 
 requirements:
   host:
