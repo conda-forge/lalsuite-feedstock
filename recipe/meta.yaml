@@ -1,23 +1,23 @@
 {% set name = "lalsuite" %}
-{% set version = "6.70" %}
+{% set version = "6.71" %}
 
 # sub-package versions
-{% set lal_version = "6.22.0" %}
-{% set lalframe_version = "1.5.0" %}
-{% set lalmetaio_version = "1.6.0" %}
-{% set lalsimulation_version = "2.0.0" %}
-{% set lalburst_version = "1.5.4" %}
-{% set lalinspiral_version = "1.10.0" %}
-{% set lalpulsar_version = "1.18.2" %}
-{% set lalinference_version = "2.0.0" %}
-{% set lalapps_version = "6.25.1" %}
+{% set lal_version = "7.0.0" %}
+{% set lalframe_version = "1.5.1" %}
+{% set lalmetaio_version = "1.6.1" %}
+{% set lalsimulation_version = "2.1.0" %}
+{% set lalburst_version = "1.5.5" %}
+{% set lalinspiral_version = "1.10.1" %}
+{% set lalpulsar_version = "2.0.0" %}
+{% set lalinference_version = "2.0.1" %}
+{% set lalapps_version = "6.26.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 build:
-  noarch: "python"
+  noarch: python
   number: 0
 
 requirements:
@@ -65,13 +65,13 @@ test:
     - python -m pip show {{ name }}
 
 about:
-  home: "https://wiki.ligo.org/Computing/LALSuite"
-  doc_url: "https://lscsoft.docs.ligo.org/lalsuite/"
-  dev_url: "https://git.ligo.org/lscsoft/lalsuite/"
-  license: "GPL-3.0-or-later"
-  license_family: "GPL"
-  license_file: "COPYING"
-  summary: "LSC Algorithm Library Suite"
+  home: https://wiki.ligo.org/Computing/LALSuite
+  doc_url: https://lscsoft.docs.ligo.org/lalsuite/
+  dev_url: https://git.ligo.org/lscsoft/lalsuite/
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: COPYING
+  summary: LSC Algorithm Library Suite
   description: |
     The LSC Algorithm Library Applications for gravitational wave data
     analysis.  This package contains applications that are built on tools
