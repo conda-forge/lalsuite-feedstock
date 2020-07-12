@@ -5,7 +5,7 @@ Home: https://wiki.ligo.org/Computing/LALSuite
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: LSC Algorithm Library Suite
 
