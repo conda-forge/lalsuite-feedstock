@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lalsuite-feedst
 
 Summary: LSC Algorithm Library Suite
 
-Development: https://git.ligo.org/lscsoft/lalsuite/
+Development: https://git.ligo.org/lscsoft/lalsuite.git
 
 Documentation: https://lscsoft.docs.ligo.org/lalsuite/
 

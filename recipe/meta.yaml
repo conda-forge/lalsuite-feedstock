@@ -1,16 +1,16 @@
 {% set name = "lalsuite" %}
-{% set version = "6.81" %}
+{% set version = "6.82" %}
 
 # sub-package versions
-{% set lal_version = "7.1.1" %}
-{% set lalframe_version = "1.5.3" %}
-{% set lalmetaio_version = "2.0.1" %}
-{% set lalsimulation_version = "2.5.0" %}
-{% set lalburst_version = "1.5.7" %}
-{% set lalinspiral_version = "2.0.1" %}
-{% set lalpulsar_version = "3.0.0" %}
-{% set lalinference_version = "2.0.6" %}
-{% set lalapps_version = "7.1.0" %}
+{% set lal_version = "7.1.2" %}
+{% set lalframe_version = "1.5.4" %}
+{% set lalmetaio_version = "2.0.2" %}
+{% set lalsimulation_version = "2.5.1" %}
+{% set lalburst_version = "1.5.8" %}
+{% set lalinspiral_version = "2.0.2" %}
+{% set lalpulsar_version = "3.0.1" %}
+{% set lalinference_version = "2.0.7" %}
+{% set lalapps_version = "7.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -24,11 +24,11 @@ requirements:
   host:
     - jinja2
     - pip
-    - python >=3
+    - python >=3.5
     - setuptools >=38.3.0
     - pyyaml
   run:
-    - python
+    - python >=3.5
     - lal {{ lal_version }}.*
     - lalframe {{ lalframe_version }}.*
     - lalmetaio {{ lalmetaio_version }}.*
@@ -67,7 +67,7 @@ test:
 about:
   home: https://wiki.ligo.org/Computing/LALSuite
   doc_url: https://lscsoft.docs.ligo.org/lalsuite/
-  dev_url: https://git.ligo.org/lscsoft/lalsuite/
+  dev_url: https://git.ligo.org/lscsoft/lalsuite.git
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: COPYING
