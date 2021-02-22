@@ -24,11 +24,11 @@ requirements:
   host:
     - jinja2
     - pip
-    - python >=3
+    - python >=3.5
     - setuptools >=38.3.0
     - pyyaml
   run:
-    - python
+    - python >=3.5
     - lal {{ lal_version }}.*
     - lalframe {{ lalframe_version }}.*
     - lalmetaio {{ lalmetaio_version }}.*
