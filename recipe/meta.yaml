@@ -1,8 +1,8 @@
 {% set name = "lalsuite" %}
-{% set version = "7.0" %}
+{% set version = "7.1" %}
 
 # sub-package versions
-{% set lal_version = "7.1.3" %}
+{% set lal_version = "7.1.4" %}
 {% set lalframe_version = "1.5.5" %}
 {% set lalmetaio_version = "2.0.3" %}
 {% set lalsimulation_version = "3.0.0" %}
@@ -38,14 +38,6 @@ requirements:
     - lalpulsar {{ lalpulsar_version }}.*
     - lalinference {{ lalinference_version }}.*
     - lalapps {{ lalapps_version }}.*
-    - python-lal {{ lal_version }}.*
-    - python-lalframe {{ lalframe_version }}.*
-    - python-lalmetaio {{ lalmetaio_version }}.*
-    - python-lalsimulation {{ lalsimulation_version }}.*
-    - python-lalburst {{ lalburst_version }}.*
-    - python-lalinspiral {{ lalinspiral_version }}.*
-    - python-lalpulsar {{ lalpulsar_version }}.*
-    - python-lalinference {{ lalinference_version }}.*
 
 test:
   imports:
