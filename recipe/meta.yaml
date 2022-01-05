@@ -1,16 +1,16 @@
 {% set name = "lalsuite" %}
-{% set version = "7.1" %}
+{% set version = "7.2" %}
 
 # sub-package versions
-{% set lal_version = "7.1.4" %}
-{% set lalframe_version = "1.5.5" %}
-{% set lalmetaio_version = "2.0.3" %}
-{% set lalsimulation_version = "3.0.0" %}
-{% set lalburst_version = "1.5.9" %}
-{% set lalinspiral_version = "2.0.3" %}
-{% set lalpulsar_version = "3.1.0" %}
-{% set lalinference_version = "3.0.0" %}
-{% set lalapps_version = "7.3.0" %}
+{% set lal_version = "7.1.5" %}
+{% set lalframe_version = "1.6.0" %}
+{% set lalmetaio_version = "2.1.0" %}
+{% set lalsimulation_version = "3.1.0" %}
+{% set lalburst_version = "1.5.10" %}
+{% set lalinspiral_version = "2.0.4" %}
+{% set lalpulsar_version = "3.1.1" %}
+{% set lalinference_version = "3.0.1" %}
+{% set lalapps_version = "7.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -24,11 +24,11 @@ requirements:
   host:
     - jinja2
     - pip
-    - python >=3.5
+    - python >=3.6
     - setuptools >=38.3.0
     - pyyaml
   run:
-    - python >=3.5
+    - python >=3.6
     - lal {{ lal_version }}.*
     - lalframe {{ lalframe_version }}.*
     - lalmetaio {{ lalmetaio_version }}.*
