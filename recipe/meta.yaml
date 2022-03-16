@@ -1,32 +1,35 @@
 {% set name = "lalsuite" %}
-{% set version = "7.3" %}
+{% set version = "7.4" %}
 
 # sub-package versions
-{% set lal_version = "7.1.6" %}
-{% set lalframe_version = "1.6.1" %}
-{% set lalmetaio_version = "2.1.1" %}
-{% set lalsimulation_version = "3.1.1" %}
-{% set lalburst_version = "1.5.11" %}
-{% set lalinspiral_version = "2.0.5" %}
-{% set lalpulsar_version = "3.1.2" %}
-{% set lalinference_version = "3.0.2" %}
-{% set lalapps_version = "8.0.0" %}
+{% set lal_version = "7.1.7" %}
+{% set lalframe_version = "2.0.0" %}
+{% set lalmetaio_version = "2.1.2" %}
+{% set lalsimulation_version = "3.1.2" %}
+{% set lalburst_version = "1.5.12" %}
+{% set lalinspiral_version = "2.0.6" %}
+{% set lalpulsar_version = "4.0.0" %}
+{% set lalinference_version = "3.0.3" %}
+{% set lalapps_version = "8.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
+source:
+  url: https://software.igwn.org/sources/source/lalsuite/{{ name }}-{{ version }}.tar.gz
+  sha256: 2cb5d7792b842ef7cb4b126d1ed58c6276dcf5382cfd909175f6768bf072bbba
+
 build:
   noarch: python
   number: 0
+  script: {{ PYTHON }} -m pip install -vv .
 
 requirements:
   host:
-    - jinja2
     - pip
     - python >=3.6
     - setuptools >=38.3.0
-    - pyyaml
   run:
     - python >=3.6
     - lal {{ lal_version }}.*
