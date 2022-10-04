@@ -1,15 +1,15 @@
 {% set name = "lalsuite" %}
-{% set version = "7.8" %}
+{% set version = "7.10" %}
 
 # sub-package versions
-{% set lal_version = "7.2.2" %}
+{% set lal_version = "7.2.4" %}
 {% set lalframe_version = "2.0.3" %}
 {% set lalmetaio_version = "3.0.2" %}
 {% set lalsimulation_version = "4.0.2" %}
 {% set lalburst_version = "1.6.2" %}
 {% set lalinspiral_version = "3.0.2" %}
 {% set lalinference_version = "4.1.1" %}
-{% set lalpulsar_version = "5.0.2" %}
+{% set lalpulsar_version = "5.1.1" %}
 {% set lalapps_version = "9.0.2" %}
 
 package:
@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/lalsuite/{{ name }}-{{ version }}.tar.gz
-  sha256: 7cd8a7a1cb4256f881ce084d4460d5e1b5c75df6c65f3f6fb159e44f27daefb4
+  sha256: 63b00c3d61a637981814d765c9a7b63e27ebb5e59f78e8b907740f42631e6175
 
 build:
   noarch: python
