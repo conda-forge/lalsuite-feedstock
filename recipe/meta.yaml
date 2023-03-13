@@ -2,15 +2,15 @@
 {% set version = "7.13" %}
 
 # sub-package versions
-{% set lal_version = "7.2.4" %}
-{% set lalframe_version = "2.0.3" %}
-{% set lalmetaio_version = "3.0.2" %}
-{% set lalsimulation_version = "4.0.2" %}
-{% set lalburst_version = "1.7.0" %}
-{% set lalinspiral_version = "3.0.2" %}
-{% set lalinference_version = "4.1.1" %}
-{% set lalpulsar_version = "5.2.0" %}
-{% set lalapps_version = "9.1.0" %}
+{% set lal_version = "7.3.0" %}
+{% set lalframe_version = "3.0.0" %}
+{% set lalmetaio_version = "4.0.0" %}
+{% set lalsimulation_version = "5.0.0" %}
+{% set lalburst_version = "2.0.0" %}
+{% set lalinspiral_version = "4.0.0" %}
+{% set lalinference_version = "4.1.2" %}
+{% set lalpulsar_version = "6.0.0" %}
+{% set lalapps_version = "9.2.0" %}
 
 package:
   name: {{ name|lower }}
