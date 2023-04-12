@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/lalsuite/{{ name }}-{{ version }}.tar.gz
-  sha256: 0cbec15bd5b3f979d6cca93842787b38f8d13a49a165a35dc2fc540c155f3053
+  sha256: 453feccf565b4552d24814ecdc72b111592757747e611ef75b5766c1c1ea6810
 
 build:
   noarch: python
