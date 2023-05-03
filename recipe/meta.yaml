@@ -5,9 +5,9 @@
 {% set lal_version = "7.3.1" %}
 {% set lalframe_version = "3.0.1" %}
 {% set lalmetaio_version = "4.0.1" %}
-{% set lalsimulation_version = "5.1.0" %}
+{% set lalsimulation_version = "5.2.0" %}
 {% set lalburst_version = "2.0.1" %}
-{% set lalinspiral_version = "4.0.1" %}
+{% set lalinspiral_version = "4.0.2" %}
 {% set lalinference_version = "4.1.3" %}
 {% set lalpulsar_version = "6.0.1" %}
 {% set lalapps_version = "9.2.1" %}
