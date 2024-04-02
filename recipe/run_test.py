@@ -2,9 +2,7 @@
 
 import configparser
 import importlib
-import os
 import sys
-from pathlib import Path
 
 import pytest
 
@@ -17,6 +15,7 @@ def read_versions_setup_cfg(path):
 
 
 LALSUITE_COMPONENTS = read_versions_setup_cfg("setup.cfg")
+
 
 @pytest.mark.parametrize(("package", "version"), LALSUITE_COMPONENTS.items())
 def test_version(package, version):

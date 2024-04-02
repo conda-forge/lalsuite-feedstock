@@ -55,8 +55,10 @@ test:
     - lalapps
   requires:
     - pip
+    # needed for run_test.py
     - pytest
   source_files:
+    # needed for run_test.py
     - setup.cfg
   commands:
     # run_test.py checks that the versions are up-to-date
