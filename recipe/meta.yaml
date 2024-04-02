@@ -1,16 +1,16 @@
 {% set name = "lalsuite" %}
-{% set version = "7.21" %}
+{% set version = "7.22" %}
 
 # sub-package versions
-{% set lal_version = "7.4.1" %}
-{% set lalframe_version = "3.0.3" %}
-{% set lalmetaio_version = "4.0.3" %}
-{% set lalsimulation_version = "5.3.1" %}
-{% set lalburst_version = "2.0.3" %}
-{% set lalinspiral_version = "4.0.4" %}
-{% set lalinference_version = "4.1.5" %}
-{% set lalpulsar_version = "6.0.6" %}
-{% set lalapps_version = "9.2.2" %}
+{% set lal_version = "7.5.0" %}
+{% set lalframe_version = "3.0.4" %}
+{% set lalmetaio_version = "4.0.4" %}
+{% set lalsimulation_version = "5.4.0" %}
+{% set lalburst_version = "2.0.4" %}
+{% set lalinspiral_version = "5.0.0" %}
+{% set lalinference_version = "4.1.6" %}
+{% set lalpulsar_version = "6.1.0" %}
+{% set lalapps_version = "10.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/lalsuite/{{ name }}-{{ version }}.tar.gz
-  sha256: 271d02434c6a538b0e2563cb24d6b2514a0c103d8fdc591aa545da1e79064019
+  sha256: 4d8550475145e9859ec90f8287b48438f4a6730391bdfef92c4fb2dfe30e3db9
 
 build:
   noarch: python
@@ -55,8 +55,10 @@ test:
     - lalapps
   requires:
     - pip
+    # needed for run_test.py
     - pytest
   source_files:
+    # needed for run_test.py
     - setup.cfg
   commands:
     # run_test.py checks that the versions are up-to-date
