@@ -1,16 +1,16 @@
 {% set name = "lalsuite" %}
-{% set version = "7.22" %}
+{% set version = "7.23" %}
 
 # sub-package versions
-{% set lal_version = "7.5.0" %}
-{% set lalframe_version = "3.0.4" %}
-{% set lalmetaio_version = "4.0.4" %}
-{% set lalsimulation_version = "5.4.0" %}
-{% set lalburst_version = "2.0.4" %}
-{% set lalinspiral_version = "5.0.0" %}
-{% set lalinference_version = "4.1.6" %}
-{% set lalpulsar_version = "6.1.0" %}
-{% set lalapps_version = "10.0.0" %}
+{% set lal_version = "7.6.0" %}
+{% set lalframe_version = "3.0.5" %}
+{% set lalmetaio_version = "4.0.5" %}
+{% set lalsimulation_version = "6.0.0" %}
+{% set lalburst_version = "2.0.5" %}
+{% set lalinspiral_version = "5.0.1" %}
+{% set lalinference_version = "4.1.7" %}
+{% set lalpulsar_version = "7.0.0" %}
+{% set lalapps_version = "10.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/lalsuite/{{ name }}-{{ version }}.tar.gz
-  sha256: 4d8550475145e9859ec90f8287b48438f4a6730391bdfef92c4fb2dfe30e3db9
+  sha256: d9d3704fbd8e04c49f5b7225865574637d8b9cca1cf507fddcf3d29b84585d97
 
 build:
   noarch: python
@@ -28,10 +28,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.6
     - setuptools >=38.3.0
   run:
-    - python >=3.8
+    - python >=3.6
     - lal {{ lal_version }}.*
     - lalframe {{ lalframe_version }}.*
     - lalmetaio {{ lalmetaio_version }}.*
@@ -62,10 +62,10 @@ test:
     - setup.cfg
   commands:
     # run_test.py checks that the versions are up-to-date
-    # show metadata
-    - python -m pip show {{ name }}
     # check requirements
-    - python -m pip check {{ name }}
+    - python -m pip check
+    # show metadata
+    - python -m pip show lalsuite
 
 about:
   home: https://wiki.ligo.org/Computing/LALSuite
