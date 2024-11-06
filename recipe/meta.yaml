@@ -9,7 +9,7 @@
 {% set lalburst_version = "2.0.5" %}
 {% set lalinspiral_version = "5.0.1" %}
 {% set lalinference_version = "4.1.7" %}
-{% set lalpulsar_version = "7.0.0" %}
+{% set lalpulsar_version = "7.0.1" %}
 {% set lalapps_version = "10.0.1" %}
 
 package:
