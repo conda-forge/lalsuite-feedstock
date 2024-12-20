@@ -1,5 +1,5 @@
 {% set name = "lalsuite" %}
-{% set version = "7.24" %}
+{% set version = "7.25" %}
 
 # sub-package versions
 {% set lal_version = "7.6.0" %}
@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/lalsuite/{{ name }}-{{ version }}.tar.gz
-  sha256: 49c797ecd14791689fa9d2cf4ac6bb5be8c986f2672e508439d671234bfb5af4
+  sha256: 7c36a3e19a35d15b6c8fc4efed760ce44a505176f9670b7a017e57c6ec73869d
 
 build:
   noarch: python
