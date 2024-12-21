@@ -1,6 +1,8 @@
 {% set name = "lalsuite" %}
 {% set version = "7.25" %}
 
+{% set python_min = "3.10" %}
+
 # sub-package versions
 {% set lal_version = "7.6.1" %}
 {% set lalframe_version = "3.0.6" %}
@@ -28,10 +30,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=38.3.0
+    - wheel
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - lal {{ lal_version }}.*
     - lalframe {{ lalframe_version }}.*
     - lalmetaio {{ lalmetaio_version }}.*
@@ -55,6 +58,7 @@ test:
     - lalapps
   requires:
     - pip
+    - python {{ python_min }}
     # needed for run_test.py
     - pytest
   source_files:
