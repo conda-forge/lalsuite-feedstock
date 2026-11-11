@@ -1,0 +1,87 @@
+schema_version: 1
+
+context:
+  version: "8.0.0"
+
+  # Component versions
+  lal_version: "8.0.0"
+  lalframe_version: "3.1.0"
+  lalmetaio_version: "4.1.0"
+  lalsimulation_version: "7.0.0"
+  lalburst_version: "3.0.0"
+  lalinspiral_version: "5.1.0"
+  lalinference_version: "5.0.0"
+  lalpulsar_version: "8.0.0"
+  lalapps_version: "11.0.0"
+
+package:
+  name: lalsuite
+  version: ${{ version }}
+
+source:
+  url: https://software.igwn.org/sources/source/lalsuite/lalsuite-${{ version }}.tar.gz
+  sha256: 1b01b78309e59dba6497d7eafe4bee59b28b7654781f02b27c3629245fca3544
+
+build:
+  noarch: python
+  number: 0
+  script: ${{ PYTHON }} -m pip install -vv .
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools >=38.3.0
+    - wheel
+  run:
+    - python >=${{ python_min }}
+    - lal ${{ lal_version }}.*
+    - lalframe ${{ lalframe_version }}.*
+    - lalmetaio ${{ lalmetaio_version }}.*
+    - lalsimulation ${{ lalsimulation_version }}.*
+    - lalburst ${{ lalburst_version }}.*
+    - lalinspiral ${{ lalinspiral_version }}.*
+    - lalpulsar ${{ lalpulsar_version }}.*
+    - lalinference ${{ lalinference_version }}.*
+    - lalapps ${{ lalapps_version }}.*
+
+tests:
+  - python:
+      imports:
+        - lal
+        - lalframe
+        - lalmetaio
+        - lalsimulation
+        - lalburst
+        - lalinspiral
+        - lalpulsar
+        - lalinference
+        - lalapps
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - files:
+      source:
+        - setup.cfg
+    requirements:
+      run:
+        - pytest
+    script: test_component_versions.py
+
+about:
+  summary: LSC Algorithm Library Suite
+  description: |
+    The LSC Algorithm Library Applications for gravitational wave data
+    analysis.  This package contains applications that are built on tools
+    in the LSC Algorithm Library.
+  homepage: https://wiki.ligo.org/Computing/LALSuite
+  repository: https://git.ligo.org/lscsoft/lalsuite.git
+  documentation: https://lscsoft.docs.ligo.org/lalsuite/
+  license: GPL-3.0-or-later
+  license_file: COPYING
+
+extra:
+  recipe-maintainers:
+    - duncanmmacleod
+    - skymoo
