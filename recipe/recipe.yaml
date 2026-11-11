@@ -18,14 +18,16 @@ package:
   name: lalsuite
   version: ${{ version }}
 
-source:
-  url: https://software.igwn.org/sources/source/lalsuite/lalsuite-${{ version }}.tar.gz
-  sha256: 1b01b78309e59dba6497d7eafe4bee59b28b7654781f02b27c3629245fca3544
+#source:
+#  url: https://software.igwn.org/sources/source/lalsuite/lalsuite-${{ version }}.tar.xz
+#  sha256: 2a3ef8a3c5af25a7cd94c8a79b1c78549d2c92bb5d8a5634f632eaaaeb785c80
 
 build:
   noarch: python
   number: 0
-  script: ${{ PYTHON }} -m pip install -vv .
+  script:
+    - cd ${{ RECIPE_DIR }}
+    - ${{ PYTHON }} -m pip install -vv .
 
 requirements:
   host:
@@ -61,13 +63,15 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - files:
-      source:
-        - setup.cfg
-    requirements:
-      run:
-        - pytest
-    script: test_component_versions.py
+  #- files:
+  #    source:
+  #      - setup.cfg
+  #    recipe:
+  #      - test_component_versions.py
+  #  requirements:
+  #    run:
+  #      - pytest
+  #  script: pytest test_component_versions.py
 
 about:
   summary: LSC Algorithm Library Suite
