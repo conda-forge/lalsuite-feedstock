@@ -1,26 +1,26 @@
 schema_version: 1
 
 context:
-  version: "8.0.0"
+  version: "8.0.2"
 
   # Component versions
-  lal_version: "8.0.0"
-  lalframe_version: "3.1.0"
-  lalmetaio_version: "4.1.0"
-  lalsimulation_version: "7.0.0"
-  lalburst_version: "3.0.0"
-  lalinspiral_version: "5.1.0"
-  lalinference_version: "5.0.0"
-  lalpulsar_version: "8.0.0"
+  lal_version: "8.0.1"
+  lalframe_version: "3.1.1"
+  lalmetaio_version: "4.1.1"
+  lalsimulation_version: "7.0.1"
+  lalburst_version: "3.0.1"
+  lalinspiral_version: "5.1.1"
+  lalinference_version: "5.0.1"
+  lalpulsar_version: "8.0.1"
   lalapps_version: "11.0.0"
 
 package:
   name: lalsuite
   version: ${{ version }}
 
-#source:
-#  url: https://software.igwn.org/sources/source/lalsuite/lalsuite-${{ version }}.tar.xz
-#  sha256: 2a3ef8a3c5af25a7cd94c8a79b1c78549d2c92bb5d8a5634f632eaaaeb785c80
+source:
+  url: https://software.igwn.org/sources/source/lalsuite/lalsuite-metapackage-${{ version }}.tar.xz
+  sha256: fbf411922746fffa84c1e7a93b1a7a1ca1b68f48f12779655d41ce6dd2d35cca
 
 build:
   noarch: python
@@ -63,15 +63,15 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  #- files:
-  #    source:
-  #      - setup.cfg
-  #    recipe:
-  #      - test_component_versions.py
-  #  requirements:
-  #    run:
-  #      - pytest
-  #  script: pytest test_component_versions.py
+  - files:
+      recipe:
+        - setup.cfg
+        - test_component_versions.py
+    requirements:
+      run:
+        - pytest
+    script:
+      - pytest test_component_versions.py -v -ra -k 'not lalapps'
 
 about:
   summary: LSC Algorithm Library Suite
